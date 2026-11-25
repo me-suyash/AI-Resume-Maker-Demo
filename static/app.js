@@ -1,0 +1,4 @@
+
+function demoToast(message){let old=document.querySelector('.toast');if(old)old.remove();let el=document.createElement('div');el.className='toast';el.textContent=message;document.body.appendChild(el);setTimeout(()=>el.remove(),3100)}
+function improveText(){let v=document.getElementById('original').value.trim();document.getElementById('oldText').textContent=v||'No text entered';document.getElementById('newText').textContent='Developed a website using Python, demonstrating practical web development skills.';demoToast('Showing a sample AI suggestion — no live AI call was made.')}
+function filterRows(v){let row=document.querySelector('.table-row');let empty=document.getElementById('emptyState');let match=row&&row.innerText.toLowerCase().includes(v.toLowerCase());if(row)row.style.display=match?'flex':'none';if(empty)empty.style.display=match?'none':'block'}

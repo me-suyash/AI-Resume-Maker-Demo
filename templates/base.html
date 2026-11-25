@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Resume Maker | Demo</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><div class="shell">
+<aside class="sidebar"><div class="brand"><div class="brand-icon">✦</div><div><b>ResumeAI</b><small>SMART RESUME STUDIO</small></div></div>
+<div class="workspace">WORKSPACE</div>
+<nav>
+<a class="{{ 'active' if active=='dashboard' else '' }}" href="/">▦ <span>Dashboard</span></a>
+<a class="{{ 'active' if active=='editor' else '' }}" href="/editor">▤ <span>Resume Builder</span></a>
+<a class="{{ 'active' if active=='import' else '' }}" href="/import">⇧ <span>Import Resume</span></a>
+<a class="{{ 'active' if active=='assistant' else '' }}" href="/assistant">✧ <span>AI Assistant</span><em>AI</em></a>
+<a class="{{ 'active' if active=='templates' else '' }}" href="/templates">▧ <span>Templates</span></a>
+<a class="{{ 'active' if active=='resumes' else '' }}" href="/resumes">▣ <span>My Resumes</span></a>
+</nav><div class="side-bottom"><div class="help"> <b>Need a hand?</b><p>Explore the demo screens to see how your resume workflow will look.</p><a href="/editor">Open builder →</a></div><div class="profile"><div class="avatar">U</div><div><b>Demo User</b><small>Student workspace</small></div><span>•••</span></div></div></aside>
+<main class="main"><header><div class="crumb">Workspace <span>/</span> {{ active|title }}</div><div class="top-actions"><span class="demo-pill">● DEMO MODE</span><div class="avatar small">U</div></div></header>
+{% with messages = get_flashed_messages() %}{% if messages %}<div class="toast">{{ messages[0] }}</div>{% endif %}{% endwith %}
+<section class="content">{% block content %}{% endblock %}</section>
+<footer>ResumeAI · Academic mini-project UI prototype <span>Demo data only — no real AI/OCR processing</span></footer></main></div>
+<script src="{{ url_for('static', filename='app.js') }}"></script></body></html>
