@@ -15,5 +15,5 @@
 <main class="main"><header><div class="crumb">Workspace <span>/</span> {{ active|title }}</div><div class="top-actions"><span class="demo-pill">● DEMO MODE</span><div class="avatar small">U</div></div></header>
 {% with messages = get_flashed_messages() %}{% if messages %}<div class="toast">{{ messages[0] }}</div>{% endif %}{% endwith %}
 <section class="content">{% block content %}{% endblock %}</section>
-<footer>ResumeAI · Academic mini-project UI prototype <span>Demo data only — no real AI/OCR processing</span></footer></main></div>
+<footer>ResumeAI · Academic mini-project UI prototype <span>Developed by Suyash Shrivastava · Demo data only — no real AI/OCR processing</span></footer></main></div>
 <script src="{{ url_for('static', filename='app.js') }}"></script></body></html>
